@@ -300,6 +300,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productpage-v1
+  namespace: bookinfo
   labels:
     app: productpage
     version: v1
@@ -318,7 +319,7 @@ spec:
       serviceAccountName: bookinfo-productpage
       containers:
       - name: productpage
-        image: docker.io/istio/examples-bookinfo-productpage-v1:1.15.0
+        image: __IMAGE__
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080

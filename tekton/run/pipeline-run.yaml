@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineRun
+metadata:
+  generateName: bookinfo-pr-
+spec:
+  pipelineRef:
+    name: build-and-deploy-pipeline
+  resources:
+    - name: git-source
+      resourceRef:
+        name: bookinfo-git
+  params:
+    - name: pathToContext
+      value: "src/productpage"
+    - name: pathToDockerFile
+      value: "src/productpage"
+    - name: pathToYamlFile
+      value: "platform/kube/bookinfo.yaml"
+    - name: imageUrl
+      value: registry.cn-hangzhou.aliyuncs.com/xutao/examples-bookinfo-productpage-v1
+    - name: imageTag
+      value: "1.15.1"
+  serviceAccountName: pipeline-account
