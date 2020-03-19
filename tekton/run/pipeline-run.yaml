@@ -13,7 +13,7 @@ spec:
     - name: pathToContext
       value: "src/productpage"
     - name: pathToDockerFile
-      value: "src/productpage"
+      value: "Dockerfile"
     - name: pathToYamlFile
       value: "platform/kube/bookinfo.yaml"
     - name: imageUrl
