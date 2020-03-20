@@ -8,4 +8,4 @@ spec:
     - name: revision
       value: master
     - name: url
-      value: git@github.com:xutao1989103/bookinfo.git
+      value: https://github.com/xutao1989103/bookinfo
